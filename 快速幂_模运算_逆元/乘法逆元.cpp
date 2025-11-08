@@ -21,7 +21,7 @@ void solve() {
     }
 
 }
-//线性递推
+//线性递推：用于求一串数字的逆元
 void solve2(){
     long long n,p;
     cin>>n;
