@@ -7,22 +7,22 @@ typedef pair<int, int> PII;
 int main()
 {
 	ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-
+	//构造
 	//	vector<int>a(5,20);
 	//	for(int i:a)cout<<i<<" ";
 	//	cout<<endl;
 	//	
 	//	vector<int>b{1, 2, 3, 4, 5};
-	//	
-	//	n=m=5;
-	//	vector<vector<int>>mt(n,vector<int>(m,3));
-	//	for(auto& v:mt)
-	//	{
-	//		for(auto& i:v)cout<<i<<" ";	
-	//		cout<<endl;	
-	//	}
+	//二维动态数组	
+	//  n=m=5;
+	//  vector<vector<int>>mt(n,vector<int>(m,3));
+	//  for(auto& v:mt)
+	//  {
+	//  	for(auto& i:v)cout<<i<<" ";	
+	//  	cout<<endl;	
+	//  }
 
-
+	//尾插方法
 	//vector<int>a;
 	//n = 5;
 	//for (int i = 0; i < n; i++)a.push_back(i);
@@ -62,7 +62,7 @@ int main()
 	//auto it = v.rbegin();
 	//it += 155;
 	//cout << *it << endl;
-
+	
 	//set<int>s;
 	//for (int i = 0; i < 100; i++)s.insert(i);
 	//auto it1 = s.begin();
