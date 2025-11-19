@@ -42,7 +42,7 @@ using namespace std;
 //A；酣畅淋漓
 
 //下面来做洛谷3865模板题
-long long a[100010];
+long long a[100010];//静态
 const int maxn=1e5+10;
 int st[100010][18];
 int n,m;

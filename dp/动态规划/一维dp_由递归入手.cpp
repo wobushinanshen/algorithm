@@ -44,6 +44,9 @@ int f2(int n,int dp[]){
 //  能不能写成
 
 //f3 :从底到顶的dp
+//这里可以看出dp的一个思想，就是当前状态只和前一个状态有关
+//就很想高中数学的那个递推公式，
+//然后第一个状态是已经知道的，
 int f3(int n){
     int last=1,lastlast=0;
     int res=0;
@@ -53,7 +56,7 @@ int f3(int n){
         last=res;
     }
     return last;
-
+    
 }
 int main(){
     int n=10;

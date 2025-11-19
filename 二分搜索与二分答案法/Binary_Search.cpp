@@ -7,8 +7,8 @@ int main(){
     int target = 13;
     int l=0,r=n-1;
     bool found=false;
-    while(l<=r){
-        int mid=l+(r-l)/2;//避免溢出的写法
+    while(l<r){
+        int mid=l+(r-l)/2;//避免溢出
         if(arr[mid]>target){
             r=mid-1;
         }

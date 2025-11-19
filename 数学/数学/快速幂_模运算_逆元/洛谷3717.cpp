@@ -26,6 +26,7 @@ void solve(){
         fac[i]=(i*fac[i-1])%p;
     }
     inv[N]=binpow(fac[N],p-2);//先计算出最大数N！的逆元
+    
     //这里通过最大数的逆元，线性递推出0到N-1的逆元，于是我们得到了inv[N]
     for(int i=N-1;i>=0;i--){
         inv[i]=(inv[i+1]*(i+1))%p;//这是线性递推公式
