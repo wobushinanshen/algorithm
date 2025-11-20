@@ -6,9 +6,9 @@ int main(){
     int n = sizeof(arr)/sizeof(arr[0]);//数组长度
     int target = 13;
     int l=0,r=n-1;
-    bool found=false;
-    while(l<r){
-        int mid=l+(r-l)/2;//避免溢出
+    int mid=0;
+    while(l<=r){
+        mid=l+(r-l)/2;//避免溢出
         if(arr[mid]>target){
             r=mid-1;
         }
@@ -16,14 +16,13 @@ int main(){
             l=mid+1;
         }
         else{
-            cout<<"Found at index:"<<mid<<endl;
-            break;
-            found=true;
+           cout<<"Found,index:"<<mid;
+           break;
         }
+        
+    
     }
-    if(found==false){
-        cout<<"Not Found"<<endl;
-    }
+    cout<<"\n";
 
 
     

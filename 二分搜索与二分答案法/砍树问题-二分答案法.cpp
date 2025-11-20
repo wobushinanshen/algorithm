@@ -25,11 +25,13 @@ using namespace std;
 int n;
 long long m;
 int trees[1000010];
+//这也叫check函数，我习惯写成f()
 bool f(int h){
     long long total=0;
+    //判断当前固定的答案是否满足条件：此处条件即砍的树总长要超过m
     for(int i=0;i<n;i++){
         int temp=trees[i]-h;
-        total+=(temp>=0?temp:0);
+        total+=(temp>=0?temp:0);//低于锯高的算0
 
     }
     if(total>=m)return true;
@@ -44,15 +46,17 @@ int main(){
         cin>>trees[i];
         max_=max(max_,trees[i]);
     }
-    int l=0,r=max_;
+    int l=0,r=max_;//l r就是答案范围
+    int ans=0;
     while(l<=r){
         int mid=(l+r)/2;
         if(f(mid)){
+            ans=mid;//记录当前满足条件的答案，然后继续往右边找，即看锯子能不能再高一点，如果再高一点就不能满足题意了，那当前答案就是最高可能高度
             l=mid+1;
         }
         else{
             r=mid-1;
         }
     }
-    cout<<l-1<<endl;//为啥我这里要减1才能得到正确答案
+    cout<<ans<<endl;
 }
