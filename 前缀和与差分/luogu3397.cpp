@@ -2,7 +2,7 @@
 using namespace std;
 #include<vector>
 //二维差分例题
-
+//没有初始值的二维差分
 int main(){
     int n,m,a,b,c,d;
     cin>>n>>m;
