@@ -1,10 +1,8 @@
 #include<iostream>
+#include<algorithm>
 using namespace std;
-int T,M;
-struct hub{
-    
-};
+int n,p;
+
 int main(){
-    cin>>T>>M;
 
 }

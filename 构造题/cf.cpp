@@ -1,17 +1,33 @@
 #include <bits/stdc++.h>
 using namespace std;
+typedef long long ll;
 void solve() {
-    int n,k;
-    cin>>n>>k;
-    string a;
-    int num_1=0;
+    int n,m;
+    cin>>n>>m;
+    vector<ll>a(n),b(m);
     for(int i=0;i<n;i++){
         cin>>a[i];
-        if(a[i]=='1'){
-            num_1++;
+    }
+    for(int i=0;i<m;i++){
+        cin>>b[i];
+    }
+    a[0]=min(b[0]-a[0],a[0]);
+    for(int i=1;i<n;i++){
+        ll min_=min(a[i],b[0]-a[i]);
+        ll max_=max(a[i],b[0]-a[i]);
+        if(max_<a[i-1]){
+            cout<<"NO"<<endl;
+            return;
+        }
+        if(min_>=a[i-1]){
+            a[i]=min_;
+        }
+        else{
+            a[i]=max_;
         }
     }
-    if(num_1>)
+    cout<<"YES"<<endl;
+
 }
 
 signed main() {

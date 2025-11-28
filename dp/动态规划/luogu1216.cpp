@@ -47,7 +47,7 @@ int f2(int x,int y){
     for(int i=r;i>=1;i--){
         for(int j=1;j<=i;j++){
             if(i==r){
-                dp[i][j]=a[i][j];
+                dp[i][j]=a[i][j];//初始化(base case)
             }
             else{
                 dp[i][j]=max(dp[i+1][j],dp[i+1][j+1])+a[i][j];
