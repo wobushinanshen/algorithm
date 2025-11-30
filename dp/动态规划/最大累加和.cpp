@@ -11,12 +11,12 @@ int main(){
         cin>>a[i];
     }
     int dp[10086];
-    dp[0]=0;
+    dp[1]=a[1];
     //明确dp数组的定义
     //dp[i]；指的是以i位置的数作为结尾，往左能延伸出的最大累加和
     //状态转移方程：dp[i]=max(dp[i-1]+a[i],a[i]);
     int ans=a[1];
-    for(int i=1;i<=n;i++){
+    for(int i=2;i<=n;i++){
         dp[i]=max(dp[i-1]+a[i],a[i]);
         ans=max(dp[i],ans);
     }
