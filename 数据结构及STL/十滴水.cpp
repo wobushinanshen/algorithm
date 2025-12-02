@@ -6,7 +6,7 @@ using namespace std;
 //这题涉及数组模拟双链表，以及哈希表的使用
 //利用了双向链表删除只需O(1)和哈希表查找只需O(1)的特性
 
-//1、双向链表，可快速删除已经爆开的水滴(剥开的水滴变为0，不会再有任何影响)
+//1、双向链表，可快速删除已经爆开的水滴(爆开的水滴变为0，不会再有任何影响)
 //2、map哈希表：因为题目会输入一个索引来加入水滴，而我们的链表只存了不为0的元素
 //   因此我们需要将题目输入的索引对上链表的索引
 int c,m,n;
@@ -14,9 +14,9 @@ const int N=300010;
 unordered_map<int,int>pos;
 typedef pair<int,int>PII;
 PII q[N];
-int l[N];
-int r[N];
-int e[N];
+int l[N];//
+int r[N];//
+int e[N];//链表
 int main(){
     cin>>c>>m>>n;
     for(int i=1;i<=m;i++){

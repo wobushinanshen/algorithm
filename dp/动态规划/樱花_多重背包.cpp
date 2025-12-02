@@ -1,9 +1,10 @@
 #include<iostream>
 #include<algorithm>
 using namespace std;
-//跟01背包的不同：每种物品是有限个的，题目会给定每个物品的个数
+//跟01背包的不同：每种物品是有限个的(也就是说可以不止一个，可以是一个，还可以无数个)，
+//题目会给定每个物品的个数
 //那就是每个物品多了一个属性而已嘛
-//那就多开一个数组，记录每个物品个数(也可能是无限个)
+//那就多开一个数组，记录每个物品个数(为0时表示无限个)
 int n,time_;
 int cost[10005],value[10005],num[10005];
 int dp[10005][1005];
@@ -37,6 +38,32 @@ int f1(){
     return dp[n][time_];
 }
 
+//空间压缩版本
+int dp1[1005];
+int f2(){
+    for(int i=1;i<=n;i++){
+        dp1[i]=0;
+    }
+    for(int i=1;i<=n;i++){
+        if(num[i]==0){
+            for(int j=1;j<=time_;j++){
+                if(j-cost[i]>=0){
+                    dp1[j]=max(dp1[j],dp1[j-cost[i]]+value[i]);
+                }
+            }
+
+        }
+        else{
+            for(int j=time_;j>=time_-cost[i];j--){
+                for(int k=1;k<=num[i];k++){
+                    dp1[j]=max(dp1[j],dp1[j-k*cost[i]]+k*value[i]);
+                }
+            }
+
+        }
+    }
+    return dp1[time_];
+}
 int main(){
     //遇到时间输入hh:mm形式，可以这样写：
     int hour1,minute1,hour2,minute2;
@@ -47,6 +74,7 @@ int main(){
         cin>>cost[i]>>value[i]>>num[i];
     }
     cout<<f1()<<endl;
+    cout<<f2()<<endl;
 
 
 

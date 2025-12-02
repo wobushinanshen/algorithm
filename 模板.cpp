@@ -1,5 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
+typedef long long ll;
+typedef int II;
+
 void solve() {
 }
 
